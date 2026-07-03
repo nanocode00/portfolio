@@ -1,0 +1,52 @@
+<section id="skills" class="skills-section scroll-section" aria-labelledby="skills-section-title">
+  <div class="section-container max-width">
+    <!-- Section Title -->
+    <div class="section-header">
+      <span class="section-subtitle">TECHNICAL SKILLS</span>
+      <h2 id="skills-section-title" class="section-title">보유 기술 역량</h2>
+      <p class="section-description">
+        각 핵심 개발 도구들이 제품 기능 설계 및 협업 프로세스에 실제 사용된 맥락을 명확히 정의합니다. 카드를 호버하거나 포커싱하면 관련 프로젝트가 시각적으로 강조됩니다.
+      </p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      {{#each portfolio.skills}}
+        <div 
+          class="skill-card" 
+          id="skill-card-{{this.id}}"
+          tabindex="0" 
+          data-project-ids="{{#each this.projectIds}}{{this}}{{#unless @last}},{{/unless}}{{/each}}"
+          aria-describedby="skill-usage-{{this.id}}"
+        >
+          <div class="skill-card-header">
+            <h3 class="skill-category-title">{{this.category}}</h3>
+            <span class="skill-indicator-dot"></span>
+          </div>
+
+          <!-- Items list as badges -->
+          <div class="skill-badge-list">
+            {{#each this.items}}
+              <span class="skill-badge">{{this}}</span>
+            {{/each}}
+          </div>
+
+          <!-- Usage Description -->
+          <div class="skill-usage-text" id="skill-usage-{{this.id}}">
+            <p><strong>실제 활용 및 구현:</strong> {{this.usage}}</p>
+          </div>
+
+          <!-- Related Projects Mapping -->
+          <div class="skill-related-projects">
+            <span class="related-label">관련 대표 프로젝트:</span>
+            <div class="related-project-chips">
+              {{#each this.relatedProjects}}
+                <span class="project-chip">{{this}}</span>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

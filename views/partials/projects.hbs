@@ -1,0 +1,366 @@
+<section id="projects" class="projects-section scroll-section" aria-labelledby="projects-section-title">
+  <div class="section-container max-width">
+    <!-- Section Title -->
+    <div class="section-header">
+      <span class="section-subtitle">PROJECTS</span>
+      <h2 id="projects-section-title" class="section-title">대표 프로젝트</h2>
+      <p class="section-description">
+        AI 모델을 실제 모바일 환경과 하드웨어, 백엔드 데이터베이스 구조로 확장하여 상용 수준의 완결된 제품으로 구현해 낸 핵심 성과들입니다.
+      </p>
+    </div>
+
+    <!-- Project List -->
+    <div class="projects-grid">
+      {{#each portfolio.projects}}
+        <div class="project-card" id="project-card-{{this.id}}" data-project-id="{{this.id}}">
+          
+          <!-- Mockup / Wireframe Placeholder -->
+          <div class="project-mockup-wrapper">
+            <div class="mockup-header">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+              <span class="mockup-title">{{this.placeholderText}}</span>
+            </div>
+            
+            <div class="mockup-body placeholder-{{this.placeholderType}}">
+              {{#if this.isHummingBlocks}}
+                <!-- 🤖 HummingBlocks 다이어그램 수록 -->
+                <div class="project-diagram-wrapper" aria-labelledby="hb-diagram-title-left">
+                  <div class="diagram-header-info">
+                    <h4 id="hb-diagram-title-left" class="diagram-title-label">🤖 AI 인식 ➔ 음악 실행 파이프라인</h4>
+                    <p class="diagram-subtitle-desc">블록 촬영 이미지 데이터가 로컬 추론 및 후처리를 거쳐 네이티브 악보로 재생되는 전체 과정</p>
+                  </div>
+                  
+                  <div class="pipeline-container horizontal-layout">
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">1</span>
+                      <div class="node-main-content">
+                        <div class="node-header">실물 촬영</div>
+                        <div class="node-body">카메라 이미지 입력</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">2</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Android 앱</div>
+                        <div class="node-body">이미지 전송 (Java)</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">3</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Chaquopy</div>
+                        <div class="node-body">Python 코드 연결</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">4</span>
+                      <div class="node-main-content">
+                        <div class="node-header">YOLO 추론</div>
+                        <div class="node-body">bbox, class 검출</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">5</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">후처리</div>
+                        <div class="node-body">중복제거/순서정렬</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">6</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">음악 변환</div>
+                        <div class="node-body">시퀀스/템포 구성</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">7</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">음악 재생</div>
+                        <div class="node-body">네이티브 오디오</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TFLite Review Card -->
+                  <div class="performance-improvement-box">
+                    <span class="improvement-icon">💡</span>
+                    <div class="improvement-content">
+                      <div class="improvement-title">성능 개선 검토</div>
+                      <div class="improvement-text">TFLite로 Android 내 직접 추론을 통해 지연 시간 감소 방안을 수립했습니다.</div>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if this.isMedicalAI}}
+                <!-- 📋 Medical AI 다이어그램 수록 -->
+                <div class="project-diagram-wrapper" aria-labelledby="med-diagram-title-left">
+                  <div class="diagram-header-info">
+                    <h4 id="med-diagram-title-left" class="diagram-title-label">📋 화면 요구사항 ➔ 백엔드 설계 흐름</h4>
+                    <p class="diagram-subtitle-desc">Figma 요구사항 분석에서 설계 및 쿼리 도출까지 이어지는 흐름</p>
+                  </div>
+                  
+                  <div class="pipeline-container horizontal-layout has-feedback-loop">
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">1</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Figma 분석</div>
+                        <div class="node-body">화면 구성 및 요구 파악</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">2</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">기능 명세</div>
+                        <div class="node-body">동작 및 예외 조건 정의</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">3</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">ERD 설계</div>
+                        <div class="node-body">RDB 엔티티 관계 정의</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">4</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">SQL / DTO</div>
+                        <div class="node-body">쿼리 작성 및 인터페이스</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">5</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Jira 관리</div>
+                        <div class="node-body">Story 단위 작업 분리</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">6</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Git 협업</div>
+                        <div class="node-body">코드리뷰 기반 병합</div>
+                      </div>
+                    </div>
+
+                    <div class="feedback-loop-overlay">
+                      <span class="feedback-text">지속적 보완 피드백 루프</span>
+                      <span class="feedback-arrow">↩</span>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#if this.isSmartPot}}
+                <!-- 🌱 Smart Pot 다이어그램 수록 -->
+                <div class="project-diagram-wrapper" aria-labelledby="sp-diagram-title-left">
+                  <div class="diagram-header-info">
+                    <h4 id="sp-diagram-title-left" class="diagram-title-label">🌱 웹 UI ➔ 센서/액추에이터 계통도</h4>
+                    <p class="diagram-subtitle-desc">이질적인 물리 임베디드 장치 제어부와 고수준 웹 UI 영역을 통합한 양방향 데이터 구조</p>
+                  </div>
+                  
+                  <div class="bento-two-tier-layout">
+                    <!-- High-Level Service Tier -->
+                    <div class="diagram-tier service-tier-box">
+                      <div class="tier-label">☁️ 상위 서비스 영역</div>
+                      <div class="tier-nodes-flex">
+                        <div class="pipeline-node-card">
+                          <div class="node-main-content">
+                            <div class="node-header">사용자</div>
+                            <div class="node-body">모니터링 & 명령</div>
+                          </div>
+                        </div>
+                        
+                        <div class="tier-connector-arrow">↔</div>
+                        
+                        <div class="pipeline-node-card my-role">
+                          <span class="role-badge">일부담당</span>
+                          <div class="node-main-content">
+                            <div class="node-header">React UI</div>
+                            <div class="node-body">웹 화면 제어</div>
+                          </div>
+                        </div>
+                        
+                        <div class="tier-connector-arrow">↔</div>
+                        
+                        <div class="pipeline-node-card">
+                          <div class="node-main-content">
+                            <div class="node-header">AWS</div>
+                            <div class="node-body">클라우드 통신</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Directions -->
+                    <div class="tier-bi-arrows" aria-hidden="true">
+                      <div class="flow-dir-left">
+                        <span class="arrow-dir-symbol">↓</span>
+                        <span class="arrow-dir-text">제어 명령 하향</span>
+                      </div>
+                      <div class="flow-dir-right">
+                        <span class="arrow-dir-text">센서 정보 상향</span>
+                        <span class="arrow-dir-symbol">↑</span>
+                      </div>
+                    </div>
+
+                    <!-- Device Control Tier -->
+                    <div class="diagram-tier device-tier-box">
+                      <div class="tier-label">🔌 장치 제어 영역</div>
+                      <div class="tier-nodes-flex">
+                        <div class="pipeline-node-card my-role">
+                          <span class="role-badge">담당</span>
+                          <div class="node-main-content">
+                            <div class="node-header">webOS Pi</div>
+                            <div class="node-body">Raspberry Pi 구동</div>
+                          </div>
+                        </div>
+                        
+                        <div class="tier-connector-arrow">↔</div>
+                        
+                        <div class="pipeline-node-card my-role">
+                          <span class="role-badge">담당</span>
+                          <div class="node-main-content">
+                            <div class="node-header">JS Service</div>
+                            <div class="node-body">데이터 브릿지 데몬</div>
+                          </div>
+                        </div>
+                        
+                        <div class="tier-connector-arrow">↔</div>
+                        
+                        <div class="pipeline-node-card my-role">
+                          <span class="role-badge">담당</span>
+                          <div class="node-main-content">
+                            <div class="node-header">Arduino</div>
+                            <div class="node-body">비차단 펌웨어 (C++)</div>
+                          </div>
+                        </div>
+                        
+                        <div class="tier-connector-arrow">↔</div>
+                        
+                        <div class="nested-hardware-nodes">
+                          <div class="pipeline-node-card my-role">
+                            <span class="role-badge">담당</span>
+                            <div class="node-main-content">
+                              <div class="node-header">센서</div>
+                              <div class="node-body">조도/수분 측정</div>
+                            </div>
+                          </div>
+                          <div class="pipeline-node-card my-role">
+                            <span class="role-badge">담당</span>
+                            <div class="node-main-content">
+                              <div class="node-header">액추에이터</div>
+                              <div class="node-body">펌프/LED 제어</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hardware-role-info">
+                    🛠️ <strong>나의 역할:</strong> webOS-Arduino 시리얼 프로토콜 설계, 펌웨어, JS 데몬 및 센서 회로 통합
+                  </div>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+
+          <!-- Project Detail Content -->
+          <div class="project-details-content">
+            <h3 class="project-title">{{this.title}}</h3>
+            <p class="project-subtitle">{{this.subtitle}}</p>
+            <p class="project-description-text">{{this.description}}</p>
+            
+            <!-- Core Message -->
+            <div class="core-message-box">
+              <strong>핵심 메시지:</strong> {{this.keyMessage}}
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="project-tech-tags">
+              {{#each this.techStack}}
+                <span class="tech-tag">{{this}}</span>
+              {{/each}}
+            </div>
+
+            <!-- Accordion Drawer (Details) -->
+            <div class="project-accordion-wrapper">
+              <button 
+                class="accordion-trigger" 
+                id="accordion-trigger-{{this.id}}"
+                aria-expanded="false" 
+                aria-controls="details-{{this.id}}"
+                data-project-id="{{this.id}}"
+              >
+                <span class="trigger-text">상세 수행 작업 및 성과 보기</span>
+                <span class="trigger-icon">▼</span>
+              </button>
+              
+              <div 
+                class="accordion-panel" 
+                id="details-{{this.id}}" 
+                aria-hidden="true"
+              >
+                <div class="accordion-content">
+                  <ul class="detail-list">
+                    {{#each this.details}}
+                      <li class="detail-item">{{this}}</li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

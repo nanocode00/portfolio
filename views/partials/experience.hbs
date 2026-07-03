@@ -1,0 +1,71 @@
+<section id="experience" class="experience-section scroll-section" aria-labelledby="experience-section-title">
+  <div class="section-container max-width">
+    <!-- Section Title -->
+    <div class="section-header">
+      <span class="section-subtitle">EXPERIENCE & EDUCATION</span>
+      <h2 id="experience-section-title" class="section-title">주요 경험 및 업무 이력</h2>
+      <p class="section-description">
+        실제 기획 요구사항 분석에서 출발하여, 온디바이스 AI, 임베디드 통신, 관계형 데이터베이스 설계까지 다양한 기술 도메인을 관통하는 실무 궤적입니다.
+      </p>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="experience-timeline">
+      <div class="timeline-line"></div>
+
+      <!-- Experience Cards -->
+      <div class="timeline-items">
+        {{#each portfolio.experiences}}
+          <div class="timeline-item" id="timeline-item-{{this.id}}">
+            <!-- Timeline Dot Marker -->
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-pulse"></span>
+            </div>
+
+            <!-- Content Card -->
+            <div class="timeline-card">
+              <!-- Header -->
+              <div class="timeline-card-header">
+                <span class="experience-period">{{this.period}}</span>
+                <h3 class="experience-title">{{this.title}}</h3>
+                <p class="experience-role">
+                  <span class="role-badge">역할</span> <strong>{{this.role}}</strong>
+                </p>
+              </div>
+
+              <!-- Tasks list -->
+              <div class="experience-tasks">
+                <h4 class="tasks-header">수행 작업 및 기여도</h4>
+                <ul class="task-list">
+                  {{#each this.tasks}}
+                    <li class="task-item">{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+
+              <!-- Tech Stack Used -->
+              <div class="experience-techs">
+                <span class="tech-header-label">활용 기술:</span>
+                <div class="tech-chips-wrapper">
+                  {{#each this.techStack}}
+                    <span class="tech-chip-small">{{this}}</span>
+                  {{/each}}
+                </div>
+              </div>
+
+              <!-- Learning Outcomes -->
+              <div class="experience-learning-box">
+                <div class="learning-title-wrapper">
+                  <span class="learning-icon">💡</span>
+                  <strong>수행 경험을 통한 배움:</strong>
+                </div>
+                <p class="learning-text">{{this.learning}}</p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
