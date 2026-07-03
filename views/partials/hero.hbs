@@ -9,7 +9,7 @@
       <p class="hero-description">
         {{portfolio.recommendation.description}}
       </p>
-
+      
       <!-- Key Profile Card -->
       <div class="profile-card" id="profile-card-id">
         <h2 class="profile-name">{{portfolio.name}}</h2>
@@ -30,64 +30,61 @@
         <a href="#contact" class="btn btn-secondary" id="btn-go-contact">연락하기</a>
       </div>
     </div>
+  </div>
 
-    <!-- Right Column: Flow Diagram -->
-    <div class="hero-diagram-container">
-      <div class="diagram-card" id="diagram-card-id">
-        <h3 class="diagram-card-title">핵심 역량 및 제품화 아키텍처</h3>
-        <p class="diagram-card-subtitle">AI 기술이 실제 사용자 경험(Product)으로 이어지는 제품 개발 철학</p>
+  <!-- Independent Architecture Section below the hero container -->
+  <div class="hero-diagram-container max-width">
+    <div class="diagram-card" id="diagram-card-id">
+      <h3 class="diagram-card-title">핵심 역량 및 제품화 아키텍처</h3>
+      <p class="diagram-card-subtitle">AI 기술이 실제 사용자 경험(Product)으로 이어지는 제품 개발 철학</p>
+      
+      <div class="flow-diagram">
+        <!-- Step 1 -->
+        <div class="flow-step" id="step-ai">
+          <div class="step-icon">🤖</div>
+          <span class="step-label">AI</span>
+          <span class="step-desc">모델 추론 및 객체 탐지</span>
+        </div>
         
-        <div class="flow-diagram">
-          <!-- Step 1 -->
-          <div class="flow-step" id="step-ai">
-            <div class="step-icon">🤖</div>
-            <span class="step-label">AI</span>
-            <span class="step-desc">모델 추론 & 객체 탐지</span>
-          </div>
-          
-          <!-- Arrow -->
-          <div class="flow-arrow">
-            <span class="arrow-text">후처리 및 분석</span>
-            <span class="arrow-symbol">→</span>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="flow-step" id="step-data">
-            <div class="step-icon">⚙️</div>
-            <span class="step-label">Data Processing</span>
-            <span class="step-desc">2D 정렬 & 노이즈 제거</span>
-          </div>
-
-          <!-- Arrow -->
-          <div class="flow-arrow">
-            <span class="arrow-text">네이티브 연동</span>
-            <span class="arrow-symbol">→</span>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="flow-step" id="step-mobile">
-            <div class="step-icon">📱</div>
-            <span class="step-label">Mobile / Systems</span>
-            <span class="step-desc">온디바이스 가동 & 통신</span>
-          </div>
-
-          <!-- Arrow -->
-          <div class="flow-arrow">
-            <span class="arrow-text">가치 전달</span>
-            <span class="arrow-symbol">→</span>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="flow-step highlight" id="step-product">
-            <div class="step-icon">✨</div>
-            <span class="step-label">Product</span>
-            <span class="step-desc">음악 재생 & 실사용 앱</span>
-          </div>
+        <!-- Arrow 1 -->
+        <div class="flow-arrow" aria-hidden="true">
+          <span class="arrow-symbol">→</span>
         </div>
 
-        <div class="diagram-footer">
-          <p>각 단계의 유기적 결합으로 하드웨어와 소프트웨어를 아우르는 완결된 사용자 경험을 실현합니다.</p>
+        <!-- Step 2 -->
+        <div class="flow-step" id="step-data">
+          <div class="step-icon">⚙️</div>
+          <span class="step-label">Data Processing</span>
+          <span class="step-desc">결과 정렬 및 노이즈 제거</span>
         </div>
+
+        <!-- Arrow 2 -->
+        <div class="flow-arrow" aria-hidden="true">
+          <span class="arrow-symbol">→</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flow-step" id="step-mobile">
+          <div class="step-icon">📱</div>
+          <span class="step-label">Mobile / Systems</span>
+          <span class="step-desc">온디바이스 기능과 시스템 연결</span>
+        </div>
+
+        <!-- Arrow 3 -->
+        <div class="flow-arrow" aria-hidden="true">
+          <span class="arrow-symbol">→</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flow-step highlight" id="step-product">
+          <div class="step-icon">✨</div>
+          <span class="step-label">Product</span>
+          <span class="step-desc">음악 재생과 실제 사용자 경험</span>
+        </div>
+      </div>
+
+      <div class="diagram-footer">
+        <p>각 단계의 유기적 결합으로 하드웨어와 소프트웨어를 아우르는 완결된 사용자 경험을 실현합니다.</p>
       </div>
     </div>
   </div>
