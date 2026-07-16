@@ -79,16 +79,36 @@ export class PortfolioService {
         placeholderType: 'smartpot',
         isSmartPot: true,
         isSmartPotPlaceholder: true
+      },
+      {
+        id: 'aihub-dashboard',
+        title: 'AIHub 카드거래 이상탐지 대시보드',
+        subtitle: '카드 거래 데이터를 활용한 이상 거래(FDS) 탐지 및 시각화 Streamlit 대시보드',
+        description: 'AIHub 카드거래 데이터를 분석해 이상거래의 승인금액, 시간대, 거래 유형별 특징을 시각화한 Streamlit 대시보드입니다. 클래스 불균형 환경에서 정확도만으로 모델을 평가할 때의 문제점을 확인하고, 정밀도·재현율·F1-score를 함께 비교했습니다.',
+        details: [
+          'Pandas를 활용한 대용량 카드 거래 데이터셋(승인금액, 거래 시각, 업종 등) 정제 및 다차원 피처 엔지니어링 수행',
+          '정상 거래 대비 이상 거래 비중이 극도로 적은 클래스 불균형(Imbalanced Data) 문제를 정밀 정의하고, 정확도(Accuracy) 지표 착시 현상 규명 및 극복 방안 제시',
+          'Scikit-learn을 활용하여 다양한 분류 모델(Random Forest, Logistic Regression 등)을 학습하고 임계값(Threshold) 변경에 따른 오차 행렬(Confusion Matrix) 추이 분석',
+          '모델 평가를 위해 단순 정확도가 아닌 정밀도(Precision), 재현율(Recall), F1-score 곡선을 상호 비교하는 평가 대시보드 설계',
+          'Streamlit 프레임워크를 기반으로 실시간 파라미터 조절, 이상 거래 분포 시각화 및 주요 평가지표 비교가 가능한 인터랙티브 웹 대시보드 개발 및 배포'
+        ],
+        keyMessage: '극심한 클래스 불균형 데이터 환경에서 단순 성능 지표의 맹점을 통찰하고, 기획/비즈니스 목적에 최적화된 머신러닝 평가 지표(F1-score, Recall)를 도출 및 시각화한 데이터 역량',
+        techStack: ['Python', 'pandas', 'scikit-learn', 'Streamlit'],
+        placeholderText: 'AIHub 카드거래 이상탐지 대시보드 구조',
+        placeholderType: 'aihub',
+        isAihub: true,
+        isAihubPlaceholder: true,
+        demoUrl: 'https://app-project-n9mkdr3zhcgydg4fr4crcg.streamlit.app/'
       }
     ],
     skills: [
       {
         id: 'skill-ai',
         category: 'AI · 데이터',
-        items: ['PyTorch', 'YOLO v5', 'OpenCV', 'Python', 'NumPy'],
-        usage: '모바일 이미지 검출을 위한 객체 인식 모델 연동, 바운딩 박스 정렬 및 오차 제거, 기하학적 이미지 후처리 알고리즘 및 2차원 공간 정렬 구현 가능',
-        relatedProjects: ['HummingBlocks'],
-        projectIds: ['hummingblocks']
+        items: ['PyTorch', 'YOLO v5', 'OpenCV', 'Python', 'NumPy', 'pandas', 'scikit-learn', 'Streamlit'],
+        usage: '모바일 이미지 검출을 위한 객체 인식 모델 연동 및 데이터 분석, 클래스 불균형 해결을 위한 이상 탐지 모델 평가 및 정밀도·재현율·F1-score 분석 가능',
+        relatedProjects: ['HummingBlocks', 'AIHub 카드거래 이상탐지 대시보드'],
+        projectIds: ['hummingblocks', 'aihub-dashboard']
       },
       {
         id: 'skill-mobile',

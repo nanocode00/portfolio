@@ -12,9 +12,12 @@ export interface Project {
   isHummingBlocks?: boolean;
   isMedicalAI?: boolean;
   isSmartPot?: boolean;
+  isAihub?: boolean;
   isHummingBlocksPlaceholder?: boolean;
   isMedicalPlaceholder?: boolean;
   isSmartPotPlaceholder?: boolean;
+  isAihubPlaceholder?: boolean;
+  demoUrl?: string;
 }
 
 export interface SkillGroup {

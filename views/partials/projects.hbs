@@ -308,6 +308,68 @@
                   </div>
                 </div>
               {{/if}}
+
+              {{#if this.isAihub}}
+                <!-- 📊 AIHub 이상탐지 다이어그램 수록 -->
+                <div class="project-diagram-wrapper" aria-labelledby="aihub-diagram-title-left">
+                  <div class="diagram-header-info">
+                    <h4 id="aihub-diagram-title-left" class="diagram-title-label">📊 카드거래 데이터 분석 & 탐지 모델 파이프라인</h4>
+                    <p class="diagram-subtitle-desc">AIHub 카드 거래 데이터를 전처리하고 이상 탐지 모델 평가 및 지표를 시각화하는 구조</p>
+                  </div>
+                  
+                  <div class="pipeline-container">
+                    <div class="pipeline-node-card">
+                      <span class="node-seq">1</span>
+                      <div class="node-main-content">
+                        <div class="node-header">데이터 수집</div>
+                        <div class="node-body">AIHub 카드거래 Raw 데이터</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">2</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Pandas 전처리</div>
+                        <div class="node-body">거래유형/시간 특징 추출</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">3</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">모델 학습/평가</div>
+                        <div class="node-body">scikit-learn 이상 탐지</div>
+                      </div>
+                    </div>
+                    
+                    <div class="pipeline-arrow" aria-hidden="true">➔</div>
+                    
+                    <div class="pipeline-node-card my-role">
+                      <span class="node-seq">4</span>
+                      <span class="role-badge">담당</span>
+                      <div class="node-main-content">
+                        <div class="node-header">Streamlit</div>
+                        <div class="node-body">다차원 시각화 대시보드</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Metrics Review Box -->
+                  <div class="performance-improvement-box">
+                    <span class="improvement-icon">🎯</span>
+                    <div class="improvement-content">
+                      <div class="improvement-title">클래스 불균형 해결 및 평가 지표</div>
+                      <div class="improvement-text">단순 정확도 한계를 극복하기 위해 정밀도(Precision), 재현율(Recall), F1-Score를 다각도로 비교 분석하였습니다.</div>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
             </div>
           </div>
 
@@ -328,6 +390,16 @@
                 <span class="tech-tag">{{this}}</span>
               {{/each}}
             </div>
+
+            <!-- Live Demo Button if available -->
+            {{#if this.demoUrl}}
+              <div class="project-demo-link-container">
+                <a href="{{this.demoUrl}}" target="_blank" rel="noopener noreferrer" class="demo-btn">
+                  <span>⚡ Live Demo 보기</span>
+                  <span class="demo-btn-arrow">↗</span>
+                </a>
+              </div>
+            {{/if}}
 
             <!-- Accordion Drawer (Details) -->
             <div class="project-accordion-wrapper">
